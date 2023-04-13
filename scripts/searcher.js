@@ -16,14 +16,15 @@ searchResultsElement.style.backgroundColor= "transparent";
 if(menu_bar != null){
     searchResultsElement.onclick = () =>{
         const input_text_element = document.evaluate(
-            '/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/div/div[2]/input',
+            // '/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/div/div[2]/input',   
+            '/html/body/div[4]/div[2]/form/div[1]/div[1]/div[2]/div/div[2]/textarea',
             document,
             null,
             XPathResult.FIRST_ORDERED_NODE_TYPE,
             null,
         ).singleNodeValue;
         
-        let searched_text = `${input_text_element.value}`;
+        let searched_text = `${input_text_element.textContent}`;
         if(searched_text != ""){
             searched_text.replace(' ', '+');
             window.location.href= `https://youtube.com/results?search_query=${searched_text}`;
@@ -49,7 +50,7 @@ if(searchHomepageElement != null){
     searchHomepageElement.onclick = ()=> {
         console.log("Here 1!");
         const input_element = document.evaluate(
-            '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input',
+            '/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/textarea',
             document,
             null,
             XPathResult.FIRST_ORDERED_NODE_TYPE,

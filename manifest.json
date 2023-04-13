@@ -3,6 +3,7 @@
     "version" : "1.0",
     "description" : "Search on YouTube",
     "permissions" : [
+        "storage"
     ],
     "manifest_version" : 2,
     "content_scripts" : [
@@ -12,5 +13,10 @@
                 "https://www.google.com/*"
             ]
         }
-    ]
+    ],
+    "browser_action" : {
+        "default_icon" : "imgs/yt_icon_rgb.png",
+        "default_title" : "YT Search"
+    },
+    "options_page" : "options.html"
 }
