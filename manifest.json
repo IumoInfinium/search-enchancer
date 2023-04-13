@@ -1,0 +1,16 @@
+{
+    "name" : "YT Search",
+    "version" : "1.0",
+    "description" : "Search on YouTube",
+    "permissions" : [
+    ],
+    "manifest_version" : 2,
+    "content_scripts" : [
+        {
+            "js" : ["scripts/searcher.js"],
+            "matches" : [
+                "https://www.google.com/*"
+            ]
+        }
+    ]
+}
